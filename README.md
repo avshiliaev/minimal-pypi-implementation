@@ -95,7 +95,7 @@ description-file = README.md
 `````
 More on the topic [here](https://docs.python.org/3/distutils/configfile.html).
 
-# Building our package
+# Publishing a package
 Packages on PyPI are not distributed as plain source code. Instead, they are wrapped into distribution packages. 
 The most common formats for distribution packages are source archives and Python wheels.
 
@@ -117,9 +117,15 @@ As long as the `dist/` folder is created, the package is ready to be published w
 
 `twine upload dist/*`. 
 
-Please refer to the readme in our [Nexus3](https://gitlab.statmath.de/) repository on how to configure pip on your/host machine. 
+# Installing a package
 
+If the `pip.conf` file is configured properly, you will be able to install any package with a usuall 
+`pip install <package-name>` command. The Pip in this case will first hit our Group-Repo on Nexus3, then index 
+our Internal-Repo for the package. If there is none, the traffic will be redirected to the [pypi.org](https://pypi.org) 
+through our proxy.   
 
+Please refer to the readme in our [Nexus3](https://gitlab.statmath.de/) repository on how to configure 
+`pip` on your/host machine. 
 
 
 
