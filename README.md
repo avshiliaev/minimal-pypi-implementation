@@ -117,6 +117,15 @@ As long as the `dist/` folder is created, the package is ready to be published w
 
 `twine upload dist/*`. 
 
+The full command to publish the package into our nexus is: 
+`twine upload --repository-url https://nexus3.statmath.de/repository/pypi-internal/ dist/*`
+
+Instead of typing the username and password everytime, you could use keyring, too:
+
+`keyring set https://upload.pypi.org/legacy/ your-username`
+
+To disable keyring again, you have execute: `keyring --disable`
+
 # Installing a package
 
 If the `pip.conf` file is configured properly, you will be able to install any package with a usuall 
