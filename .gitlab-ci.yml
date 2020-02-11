@@ -1,0 +1,16 @@
+image: python:3.7-alpine
+
+stages:
+  - publish
+
+before_script:
+   - pip install twine
+   - python setup.py sdist
+
+publish_basic:
+  stage: publish
+  variables:
+    TWINE_USERNAME: $PUBLISH_USERNAME
+    TWINE_PASSWORD: $PUBLISH_PASSWORD
+  script:
+    - twine upload --repository-url $PYPRI_REPOSITORY_URL dist/*

@@ -4,4 +4,4 @@ class HelloStatmath:
         self.hello_string = 'Hello, statmath!'
 
     def say_hello(self):
-        print(self.hello_string)
+        return self.hello_string
