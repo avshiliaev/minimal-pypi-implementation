@@ -13,6 +13,7 @@ before_script:
 
 publish_basic:
   stage: publish
+  tags: [nexus3_shell_runner_1]
   variables:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD
