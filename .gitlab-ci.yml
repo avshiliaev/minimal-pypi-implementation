@@ -7,9 +7,8 @@ stages:
   - publish
 
 before_script:
-  - apk add --update py-pip
   - python -m unittest tests #.test_hello.HelloCase
-  - pip install twine
+  - pip3 install twine
   - python setup.py sdist
 
 publish_basic:
