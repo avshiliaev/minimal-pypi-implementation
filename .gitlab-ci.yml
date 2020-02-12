@@ -1,14 +1,13 @@
 # https://medium.com/@pypripackages/using-gitlab-pipelines-to-deploy-python-packages-in-production-and-staging-environments-8ab7dc979274
 #
 
-image: python:3.7.2-slim
-
 stages:
   - publish
 
 publish_basic:
   stage: publish
   tags: [nexus3_shell_runner_1]
+  image: python:3.7.2-slim
   variables:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD
