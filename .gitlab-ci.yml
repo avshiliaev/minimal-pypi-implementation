@@ -1,0 +1,22 @@
+image: python:3.7.2-slim
+
+stages:
+  - test
+  - publish
+
+tests:
+  stage: test
+  tags: [gitlab_py_docker_runner_1]
+  script:
+    - python -m unittest tests #.test_hello.HelloCase
+
+publish_nexus:
+  stage: publish
+  tags: [gitlab_py_docker_runner_1]
+  variables:
+    TWINE_USERNAME: $PUBLISH_USERNAME
+    TWINE_PASSWORD: $PUBLISH_PASSWORD
+  script:
+    - python setup.py sdist
+    - pip install twine
+    - twine upload --repository-url $PYPRI_REPOSITORY_URL dist/*
