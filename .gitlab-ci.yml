@@ -13,6 +13,7 @@ publish_basic:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD
   before_script:
+    - pip install pathlib
     - python setup.py sdist
     - python -m unittest tests #.test_hello.HelloCase
   script:
