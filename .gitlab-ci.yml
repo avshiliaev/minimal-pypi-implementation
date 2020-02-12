@@ -1,27 +1,25 @@
 # https://medium.com/@pypripackages/using-gitlab-pipelines-to-deploy-python-packages-in-production-and-staging-environments-8ab7dc979274
 #
 
+image: python:3.7.2-slim
+
 stages:
   - test
   - publish
 
 tests:
-  image: python:3.7.2-slim
   stage: test
   tags: [nexus3_shell_runner_1]
   script:
     - python -m unittest tests #.test_hello.HelloCase
 
 publish_nexus:
-  image: python:3.7.2-slim
   stage: publish
   tags: [nexus3_shell_runner_1]
   variables:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD
   script:
-    - pip install --upgrade pip
-    - pip install pathlib
     - python setup.py sdist
     - pip install twine
     - twine upload --repository-url $PYPRI_REPOSITORY_URL dist/*
