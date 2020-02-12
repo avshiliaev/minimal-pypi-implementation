@@ -7,6 +7,7 @@ stages:
   - publish
 
 before_script:
+  - python setup.py sdist
   - python -m unittest tests #.test_hello.HelloCase
 
 publish_basic:
@@ -16,6 +17,6 @@ publish_basic:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD
   script:
-    - python setup.py sdist
+
     - pip install twine
     - twine upload --repository-url $PYPRI_REPOSITORY_URL dist/*
