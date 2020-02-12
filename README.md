@@ -158,6 +158,6 @@ for this project.
 an image which is available to the runner on its host machine. Currently there is a  `python:3.7.2-slim`. 
 4. If you configure your CI/CD script as in this example, there will be two stages: one for tests and one for build/publish. 
 The pipeline should be triggered on every push to the repository. The package will be published to our Nexus under a version
-which corresponds to the pipeline id. See the `setup.py` file. 
+which corresponds to the pipeline id. See the `setup.py file. 
 
 **Overall refer to this repository as a basic working example**
