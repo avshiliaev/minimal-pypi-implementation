@@ -6,13 +6,13 @@ stages:
 
 tests:
   stage: test
-  tags: [gitlab_py_docker_runner_1]
+  tags: [python_docker_nexus]
   script:
     - python -m unittest tests #.test_hello.HelloCase
 
 publish_nexus:
   stage: publish
-  tags: [gitlab_py_docker_runner_1]
+  tags: [python_docker_nexus]
   variables:
     TWINE_USERNAME: $PUBLISH_USERNAME
     TWINE_PASSWORD: $PUBLISH_PASSWORD

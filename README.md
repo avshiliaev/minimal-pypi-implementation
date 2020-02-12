@@ -150,9 +150,10 @@ The runner for python packages is available under the tag `gitlab_py_docker_runn
 1. In your project, go to the Settings => CI/CD => Runners to make sure the runner is **available** and **enabled** 
 for this project.
 2. Go to the Settings => CI/CD => Variables and set the following key-value pairs:
-    * PUBLISH_USERNAME : <nexus3-username>
-    * PUBLISH_PASSWORD: <nexus3-password>
+    * PUBLISH_USERNAME : `<nexus3-username>`
+    * PUBLISH_PASSWORD: `<nexus3-password>`
     * PYPRI_REPOSITORY_URL : https://nexus3.statmath.de/repository/pypi-internal/
+
 **See our BitWarden vault to get username/password**
 3. Configure your `.gitlab_ci.yml`. Make sure to refer to the runner by its tag. Also note that you can only use 
 an image which is available to the runner on its host machine. Currently there is a  `python:3.7.2-slim`. 
