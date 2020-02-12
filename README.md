@@ -137,11 +137,5 @@ Please refer to the readme in our [Nexus3](https://gitlab.statmath.de/) reposito
 `pip` on your/host machine. 
 
 
-
-
-
-
-
-
-
+# CI/CD
 
