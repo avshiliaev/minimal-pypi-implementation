@@ -1,12 +1,12 @@
 import unittest
 
-from pystatmath import HelloStatmath
+from pyhello import HelloPython
 
 
-class HelloCase(unittest.TestCase):
+class TestHelloCase(unittest.TestCase):
     def test_hello(self):
-        hs = HelloStatmath()
-        self.assertEqual(hs.say_hello(), 'Hello, statmath!')
+        hs = HelloPython()
+        self.assertEqual(hs.say_hello(), 'Hello, Python!')
 
 
 if __name__ == '__main__':

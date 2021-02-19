@@ -11,7 +11,7 @@ README = (HERE / "README.md").read_text(encoding="utf8")
 version = os.environ['CI_JOB_ID']
 
 setup(
-    name="pystatmath",
+    name="pyhello",
     version=version,
     description="Our awesome package",
     long_description=README,

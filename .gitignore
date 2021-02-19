@@ -4,4 +4,4 @@
 
 *.pyc
 /dist/
-/pystatmath.egg-info/
+/pyhello.egg-info/
